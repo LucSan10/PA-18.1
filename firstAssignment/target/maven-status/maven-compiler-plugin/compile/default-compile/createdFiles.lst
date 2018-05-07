@@ -1,0 +1,8 @@
+mvc\IFTratadorDePaginas.class
+mvc\model\MedidasAutomaticas.class
+mvc\model\Observacoes.class
+mvc\model\Query.class
+mvc\taghandlers\MVCHeader.class
+mvc\taghandlers\MVCPages.class
+mvc\Controller.class
+mvc\pagehandlers\TratadorPagina1.class
