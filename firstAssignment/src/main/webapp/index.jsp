@@ -1,17 +1,15 @@
 <%@page import="java.net.URL"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<% URL contexto = new URL(
-            "http",
-            request.getServerName(),
-            request.getServerPort(),
-            request.getContextPath());%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
+<c:set var="context" scope="session" value="${request.getContextPath()}"/>
+<c:url var="urlContext" scope="session" value="/${sessionScope.context}"/>
 
 <%@taglib prefix="header" uri="/WEB-INF/tlds/MVCHeader" %>
 <%@taglib prefix="pages" uri="/WEB-INF/tlds/MVCPages" %>
 
 <header:MVCHeader titulo="TempoClima">
-    <link rel="stylesheet" type="text/css" href="<%= contexto%>/css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="${sessionScope.urlContext}/css/index.css"/>
     <pages:MVCPages
         nomeDaPagina="Lucas Santiago"
         nomeDoTratador="mvc.pagehandlers.TratadorPagina1">
@@ -65,13 +63,13 @@
 
             <div id="idDivFotos" class="shadowBorder">
                 FOTOS<br>
-                <img class="meia-caixa" src="<%= contexto%>/images/praia.jpg"/>
-                <img class="meia-caixa" src="<%= contexto%>/images/radar.png"/>
+                <img class="meia-caixa" src="${sessionScope.urlContext}/images/praia.jpg"/>
+                <img class="meia-caixa" src="${sessionScope.urlContext}/images/radar.png"/>
             </div>
 
             <div id="idDivGraficos" class="shadowBorder">
                 GRÁFICOS<br>
-                <img class="caixa-inteira" src="<%= contexto%>/images/grafico.temper.png"/>
+                <img class="caixa-inteira" src="${sessionScope.urlContext}/images/grafico.temper.png"/>
             </div>
 
             <br>
